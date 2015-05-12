@@ -19,8 +19,8 @@ action :update do
   arguments = initialize_arguments(new_resource)
 
 	execute "update-composer-packages" do
-		user new_resource.user
-		group new_resource.group
+		user "root"
+		group "root"
 		cwd new_resource.install_path
 		command "composer update #{arguments}"
 
